@@ -17,8 +17,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api", (req, res) => {
- res.json({ message: "welcome to the api" });
+app.get("/", (req, res) => {
+ res.json({ message: "welcome to the E-Com api" });
 });
 
 app.use("/api/users", userRoutes);
