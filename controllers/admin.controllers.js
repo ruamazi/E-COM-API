@@ -89,7 +89,6 @@ export const createProduct = async (req, res) => {
   name,
   description,
   price,
-  discountPrice,
   countInStock,
   sku,
   category,
@@ -100,11 +99,12 @@ export const createProduct = async (req, res) => {
   material,
   gender,
   images,
+  discountPrice,
   isFeatured,
   isPublished,
-  rating,
-  numReviews,
-  tags,
+  //   rating,
+  //   numReviews,
+  //   tags,
   metaTitle,
   metaDescription,
   metaKeywords,
@@ -115,14 +115,13 @@ export const createProduct = async (req, res) => {
   !name ||
   !description ||
   !price ||
-  !countInStock ||
   !sku ||
   !category ||
   !sizes ||
   !colors ||
-  !collections ||
+  !collections.length ||
   !gender ||
-  !images
+  !images.length
  ) {
   return res.status(400).json({ error: "Missing required fields" });
  }
@@ -144,9 +143,9 @@ export const createProduct = async (req, res) => {
    images,
    isFeatured,
    isPublished,
-   rating,
-   numReviews,
-   tags,
+   //rating,
+   //numReviews,
+   //tags,
    metaTitle,
    metaDescription,
    metaKeywords,

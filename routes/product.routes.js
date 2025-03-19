@@ -1,5 +1,4 @@
 import { Router } from "express";
-import protectRoute, { isAdmin } from "../middleware/authMiddleware.js";
 import {
  bestSeller,
  getProductById,
