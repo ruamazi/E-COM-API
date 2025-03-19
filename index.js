@@ -14,11 +14,7 @@ import adminRoutes from "./routes/admin.routes.js";
 
 const port = process.env.PORT || 3000;
 const app = express();
-app.use(
- cors({
-  origin: "http://localhost:5173",
- })
-);
+app.use(cors());
 app.use(express.json());
 
 app.get("/api", (req, res) => {
