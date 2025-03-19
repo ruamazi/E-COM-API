@@ -11,6 +11,7 @@ import {
 
 const router = Router();
 
+// "/api/cart"
 router.post("/add-to-cart", protectRoute, addToCart);
 router.put("/update-product-quantity", updateProductQuantity);
 router.get("/get-cart", getCart);

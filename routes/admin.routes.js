@@ -16,6 +16,8 @@ import protectRoute, { isAdmin } from "../middleware/authMiddleware.js";
 
 const router = Router();
 
+// "/api/admin"
+
 router.get("/users", protectRoute, isAdmin, getAllUsers);
 router.post("/create-user", protectRoute, isAdmin, addNewUser);
 router.put("/update-user/:id", protectRoute, isAdmin, updateUser);

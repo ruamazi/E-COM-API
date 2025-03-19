@@ -4,6 +4,7 @@ import protectRoute from "../middleware/authMiddleware.js";
 
 const router = Router();
 
+// "/api/image"
 router.post("/upload-image", protectRoute, upload.single("image"), uploadImage);
 
 export default router;

@@ -10,6 +10,7 @@ import {
 
 const router = Router();
 
+// "/api/products"
 router.get("/all-by-sort", getProductBySort);
 router.get("/single-product/:id", getProductById);
 router.get("/similar-products/:id", getSimilarProducts);

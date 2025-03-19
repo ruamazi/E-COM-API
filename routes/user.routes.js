@@ -9,6 +9,7 @@ import protectRoute from "../middleware/authMiddleware.js";
 
 const router = Router();
 
+// "/api/users"
 router.post("/register", registerUaer);
 router.post("/login", loginUser);
 router.get("/profile/:id", protectRoute, getUserById);

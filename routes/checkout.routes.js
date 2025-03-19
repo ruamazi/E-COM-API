@@ -8,6 +8,7 @@ import protectRoute from "../middleware/authMiddleware.js";
 
 const router = Router();
 
+// "/api/checkout"
 router.post("/create", protectRoute, createCheckout);
 router.put("/update/:id", protectRoute, updateCheckout);
 router.get("/finalize/:id", protectRoute, finalizeCheckout);

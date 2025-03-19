@@ -6,6 +6,7 @@ import Cart from "../models/Cart.js";
 
 const router = Router();
 
+// "/api/seed"
 router.get("/products", async (req, res) => {
  try {
   await Product.deleteMany({});
