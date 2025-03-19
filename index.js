@@ -32,7 +32,8 @@ app.use("/api/admin", adminRoutes);
 
 app.use("/api/seed", seedData);
 
-app.listen(port, () => {
- console.log(`Server is listening on http://localhost:${port}`);
- connectDB();
+connectDB().then(() => {
+ app.listen(port, () => {
+  console.log(`Server is listening on http://localhost:${port}`);
+ });
 });
