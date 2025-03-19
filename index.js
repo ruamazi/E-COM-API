@@ -14,7 +14,6 @@ import adminRoutes from "./routes/admin.routes.js";
 
 const port = process.env.PORT || 3000;
 const app = express();
-app.use(express.json());
 app.use(
  cors({
   origin: "*",
@@ -22,6 +21,7 @@ app.use(
   allowedHeaders: "Content-Type,Authorization",
  })
 );
+app.use(express.json());
 
 app.get("/api", (req, res) => {
  res.json({ message: "welcome to the api" });
