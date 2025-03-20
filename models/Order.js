@@ -80,9 +80,6 @@ const orderSchema = new mongoose.Schema(
    enum: ["Processing", "Shipped", "Delivered", "Cancelled"],
    default: "Processing",
   },
-  //   paymentDetails: {
-  //    type: mongoose.Schema.Types.Mixed,
-  //   },
   isDelivered: {
    type: Boolean,
    default: false,

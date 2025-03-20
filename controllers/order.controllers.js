@@ -31,10 +31,23 @@ export const getOrderById = async (req, res) => {
 export const deleteOrder = async (req, res) => {
  const orderId = req.params.id;
  try {
-  const order = await Order.findByIdAndDelete(orderId).exec();
+  const order = await Order.findById(orderId).exec();
   if (!order) {
    return res.status(404).json({ error: "Order not found" });
   }
+  const threeMonthsAgo = new Date();
+  threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+
+  if (
+   (order.status !== "Delivered" && order.status !== "Cancelled") ||
+   order.createdAt > threeMonthsAgo
+  ) {
+   return res.status(400).json({
+    error:
+     "Only orders that are 'Delivered' or 'Cancelled' and older than 3 months can be deleted.",
+   });
+  }
+  await Order.findByIdAndDelete(orderId);
   res.json({ message: "Order deleted successfully" });
  } catch (error) {
   console.error(error);
